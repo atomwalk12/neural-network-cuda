@@ -1,0 +1,56 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Task for C++ files"
+        },
+        {
+            "type": "cppbuild",
+            "label": "CUDA: nvcc debug build",
+            "command": "nvcc",
+            "args": [
+                "-g", 
+                "-G", 
+                "-O0",
+                "--compiler-options",
+                "'-fPIC'",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lcudnn",
+                "-lineinfo"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$nvcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Task for CUDA debugging"
+        }
+    ],
+    "version": "2.0.0"
+}

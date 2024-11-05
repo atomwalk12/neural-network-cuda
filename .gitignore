@@ -1,2 +1,4 @@
 cpu_trainer
 gpu_trainer
+cpp_check
+cudnn_check
